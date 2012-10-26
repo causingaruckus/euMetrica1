@@ -5,13 +5,16 @@ import java.util.Date;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract.Contacts;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.format.DateFormat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -44,8 +47,22 @@ public class PatientDetailsActivity extends FragmentActivity implements
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_patient_details);
+		
+		Intent intent = getIntent();
+		String name = null;
+		if (intent != null) {
+			Uri contactData = intent.getData();
+			Cursor c = managedQuery(contactData, null, null, null, null);
+			if (c.moveToFirst()) {
+				name = c.getString(c
+						.getColumnIndexOrThrow(Contacts.DISPLAY_NAME));
+
+			}
+		}
+		
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections
 		// of the app.
@@ -55,6 +72,12 @@ public class PatientDetailsActivity extends FragmentActivity implements
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		if (name != null) {
+			actionBar.setTitle(name);
+		} else {
+			actionBar.setDisplayShowTitleEnabled(false);
+		}
+		
 		// actionBar.setDisplayShowTitleEnabled(false);
 
 		// Set up the ViewPager with the sections adapter.
@@ -156,8 +179,7 @@ public class PatientDetailsActivity extends FragmentActivity implements
 	public static class DummySectionFragment extends Fragment {
 		public DummySectionFragment() {
 		}
-
-		private static final DateFormat DATE_FORMAT = new DateFormat();
+		
 		public static final String ARG_SECTION_NUMBER = "section_number";
 
 		@Override

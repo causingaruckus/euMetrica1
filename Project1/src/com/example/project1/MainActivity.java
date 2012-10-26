@@ -2,6 +2,8 @@ package com.example.project1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract.Contacts;
 import android.view.Menu;
@@ -12,6 +14,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 	private Button doctorButton;
 	private Button patientButton;
+	private final int CONTACT_PICKER_RESULT = 1001;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,22 +35,29 @@ public class MainActivity extends Activity {
 	private class PatientButtonListener implements OnClickListener {
 		@Override
 		public void onClick(View v) {
-			Intent myIntent = new Intent(android.provider.Contacts.Intents.UI.LIST_STARRED_ACTION);
-			MainActivity.this.startActivity(myIntent);
+			Intent intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI);
+			startActivityForResult(intent, CONTACT_PICKER_RESULT);
 		}
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Intent myIntent = new Intent(MainActivity.this, PatientDetailsActivity.class);
-		MainActivity.this.startActivity(myIntent);
+		if (requestCode == CONTACT_PICKER_RESULT && resultCode == RESULT_OK
+				&& data != null) {
+
+			Uri contactData = data.getData();
+			Intent myIntent = new Intent(MainActivity.this,
+					PatientDetailsActivity.class);
+			myIntent.setData(contactData);
+			MainActivity.this.startActivity(myIntent);
+		}
 	}
 
 	private class DoctorButtonListener implements OnClickListener {
 		@Override
 		public void onClick(View v) {
-			final int CONTACT_PICKER_RESULT = 1001;  
+  
 			//public void doLaunchContactPicker(View view) {  
 			    Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,  
 			            Contacts.CONTENT_URI);  
