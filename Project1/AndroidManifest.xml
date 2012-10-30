@@ -58,7 +58,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.PATIENT_CODE" />
+                <category android:name="android.intent.category.DOCTOR_CODE" />
             </intent-filter>
         </activity>
     </application>
