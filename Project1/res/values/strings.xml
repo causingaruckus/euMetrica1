@@ -18,5 +18,8 @@
     <string name="title_activity_follow">FollowActivity</string>
     <string name="title_activity_messages">MessagesActivity</string>
     <string name="title_activity_chart">ChartActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_measures">MeasuresActivity</string>
+    <string name="title_activity_patient_messages">PatientMessagesActivity</string>
 
 </resources>

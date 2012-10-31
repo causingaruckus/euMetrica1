@@ -109,11 +109,41 @@
         </activity>
         <activity
             android:name=".ChartActivity"
+            android:exported="false"
             android:label="@string/title_activity_chart" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.PATIENT_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".patient.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.PATIENT_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".patient.MeasuresActivity"
+            android:exported="false"
+            android:label="@string/title_activity_measures" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.PATIENT_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".patient.PatientMessagesActivity"
+            android:label="@string/title_activity_patient_messages" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.PATIENT_CODE" />
             </intent-filter>
         </activity>
     </application>
