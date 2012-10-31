@@ -2,7 +2,7 @@
     package="com.example.project1"
     android:versionCode="1"
     android:versionName="1.0" >
-    
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="15" />
@@ -22,18 +22,19 @@
         android:label="@string/app_name" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" 
-            android:theme="@android:style/Theme.Black.NoTitleBar">
+            android:label="@string/title_activity_main"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".PatientActivity"
-            android:label="@string/title_activity_patient" 
-            android:theme="@android:style/Theme.Black.NoTitleBar"
-            android:exported="false">
+            android:name=".patient.PatientActivity"
+            android:exported="false"
+            android:label="@string/title_activity_patient"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,8 +43,9 @@
         </activity>
         <activity
             android:name=".PatientDetailsActivity"
+            android:exported="false"
             android:label="@string/title_activity_patient_details"
-            android:exported="false">
+            android:theme="@android:style/Theme.Holo" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,14 +53,52 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DoctorActivity"
+            android:name=".doctor.DoctorActivity"
             android:label="@string/title_activity_doctor"
-            android:theme="@android:style/Theme.Black.NoTitleBar"
-            android:exported="false">
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DOCTOR_CODE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".doctor.AlertsActivity"
+            android:label="@string/title_activity_alerts"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RequestsActivity"
+            android:label="@string/title_activity_requests"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="FollowActivityctivity"
+            android:label="@string/title_activity_follow"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MessagessActivity"
+            android:label="@string/title_activity_messagess" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

@@ -1,5 +1,8 @@
 package com.example.project1;
 
+import com.example.project1.doctor.PatientDetailsActivity;
+import com.example.project1.patient.PatientActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;

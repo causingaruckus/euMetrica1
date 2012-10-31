@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.example.project1.doctor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.project1.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphViewSeries;
