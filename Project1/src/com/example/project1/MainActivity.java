@@ -34,8 +34,9 @@ public class MainActivity extends Activity {
 	private class PatientButtonListener implements OnClickListener {
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI);
-			startActivityForResult(intent, CONTACT_PICKER_RESULT);
+			Intent myIntent = new Intent(MainActivity.this,
+					PatientActivity.class);
+			startActivity(myIntent);
 		}
 	}
 
