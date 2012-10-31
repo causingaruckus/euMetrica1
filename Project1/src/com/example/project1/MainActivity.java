@@ -1,5 +1,6 @@
 package com.example.project1;
 
+import com.example.project1.doctor.DoctorActivity;
 import com.example.project1.doctor.PatientDetailsActivity;
 import com.example.project1.patient.PatientActivity;
 
@@ -61,12 +62,13 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View v) {
   
-			//public void doLaunchContactPicker(View view) {  
-			    Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,  
-			            Contacts.CONTENT_URI);  
-			    startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT); 
-			    
-			//Intent myIntent = new Intent(MainActivity.this, DoctorActivity.class);
+//			//public void doLaunchContactPicker(View view) {  
+//			    Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,  
+//			            Contacts.CONTENT_URI);  
+//			    startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT); 
+//			    
+			Intent myIntent = new Intent(MainActivity.this, DoctorActivity.class);
+			MainActivity.this.startActivity(myIntent);
 		
 		}
 	}

@@ -41,7 +41,7 @@ public class DoctorActivity extends Activity {
 					nextActivityClass = AlertsActivity.class;
 					break;
 				case 1:
-					nextActivityClass = MessagessActivity.class;
+					nextActivityClass = MessagesActivity.class;
 					break;
 				case 2:
 					nextActivityClass = RequestsActivity.class; 

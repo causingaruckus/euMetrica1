@@ -7,7 +7,6 @@ import android.view.Menu;
 import com.example.project1.R;
 
 public class PatientActivity extends Activity {
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
