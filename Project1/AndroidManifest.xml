@@ -120,7 +120,8 @@
         <activity
             android:name=".patient.SettingsActivity"
             android:exported="false"
-            android:label="@string/title_activity_settings" >
+            android:label="@string/title_activity_settings"
+            android:theme="@android:style/Theme.Holo.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -130,7 +131,8 @@
         <activity
             android:name=".patient.MeasuresActivity"
             android:exported="false"
-            android:label="@string/title_activity_measures" >
+            android:label="@string/title_activity_measures" 
+            android:theme="@android:style/Theme.Holo.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -139,7 +141,19 @@
         </activity>
         <activity
             android:name=".patient.PatientMessagesActivity"
-            android:label="@string/title_activity_patient_messages" >
+            android:exported="false"
+            android:label="@string/title_activity_patient_messages"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.PATIENT_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PatientChartActivity"
+            android:exported="false"
+            android:label="@string/title_activity_patient_chart" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

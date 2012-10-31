@@ -13,6 +13,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.project1.ChartActivity;
+import com.example.project1.PatientChartActivity;
 import com.example.project1.R;
 
 public class PatientActivity extends Activity {
@@ -41,7 +43,7 @@ public class PatientActivity extends Activity {
 					nextActivityClass = SettingsActivity.class;
 					break;
 				case 1:
-					nextActivityClass = MeasuresActivity.class;
+					nextActivityClass = PatientChartActivity.class;
 					break;
 				case 2:
 					nextActivityClass = PatientMessagesActivity.class; 
