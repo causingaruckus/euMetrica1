@@ -1,8 +1,11 @@
 package com.example.project1;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class DoctorActivity extends Activity {
@@ -12,7 +15,9 @@ public class DoctorActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor);
 		ListView docListView = (ListView) findViewById( R.id.docListView );  
-        docListView.set
+	    ArrayList<String> planetList = new ArrayList<String>();  
+	        
+	    ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, R.layout., planetList);  
     }
 
     @Override
