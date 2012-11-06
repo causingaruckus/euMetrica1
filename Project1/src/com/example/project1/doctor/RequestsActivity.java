@@ -113,7 +113,7 @@ public class RequestsActivity extends FragmentActivity implements ActionBar.TabL
 
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
 
         @Override
@@ -121,7 +121,6 @@ public class RequestsActivity extends FragmentActivity implements ActionBar.TabL
             switch (position) {
                 case 0: return getString(R.string.title_section1).toUpperCase();
                 case 1: return getString(R.string.title_section2).toUpperCase();
-                case 2: return getString(R.string.title_section3).toUpperCase();
             }
             return null;
         }
@@ -140,9 +139,15 @@ public class RequestsActivity extends FragmentActivity implements ActionBar.TabL
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             TextView textView = new TextView(getActivity());
-            textView.setGravity(Gravity.CENTER);
+            textView.setGravity(Gravity.TOP);
             Bundle args = getArguments();
-            textView.setText(Integer.toString(args.getInt(ARG_SECTION_NUMBER)));
+            
+            if (args.getInt(ARG_SECTION_NUMBER) == 1){
+            	textView.setText("-Sara's spirometer reading");	
+            } else {
+            	textView.setText("-Tim's blood pressure reading]");                
+            }
+            
             return textView;
         }
     }
