@@ -153,13 +153,13 @@ public class AlertsActivity extends FragmentActivity implements
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			TextView textView = new TextView(getActivity());
-			textView.setGravity(Gravity.CENTER);
+			textView.setGravity(Gravity.TOP);
 			Bundle args = getArguments();
 			if (args.getInt(ARG_SECTION_NUMBER) == 1) {
-				return getAlertsView();
+				textView.setText("-No Alerts at this time");
 			}
-			if (args.getInt(ARG_SECTION_NUMBER) == 2) {
-				return getNotificationsView();
+			else {
+				textView.setText("-Sara took her prescribed spirometer reading");
 			}
 			return new TextView(getActivity());
 		}
