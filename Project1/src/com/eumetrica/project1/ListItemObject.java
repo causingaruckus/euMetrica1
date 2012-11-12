@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.eumetrica.project1;
 
 public class ListItemObject {
 	public String text;

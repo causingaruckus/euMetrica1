@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.eumetrica.project1;
 
 import android.os.Bundle;
 import android.app.Activity;

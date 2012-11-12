@@ -1,4 +1,4 @@
-package com.example.project1.patient;
+package com.eumetrica.project1.patient;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.project1.ImageAdapter;
-import com.example.project1.ListItemObject;
-import com.example.project1.R;
+import com.eumetrica.project1.ImageAdapter;
+import com.eumetrica.project1.ListItemObject;
+import com.eumetrica.project1.R;
 
 public class PatientMessagesActivity extends Activity {
 

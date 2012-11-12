@@ -1,4 +1,4 @@
-package com.example.project1.doctor;
+package com.eumetrica.project1.doctor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +13,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.project1.R;
+import com.eumetrica.project1.R;
 
 public class DoctorActivity extends Activity {
 	private final String[] items = new String[] { "Alerts", "Messages",

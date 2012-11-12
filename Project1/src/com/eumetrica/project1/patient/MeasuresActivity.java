@@ -1,8 +1,8 @@
-package com.example.project1.patient;
+package com.eumetrica.project1.patient;
 
-import com.example.project1.R;
-import com.example.project1.R.layout;
-import com.example.project1.R.menu;
+import com.eumetrica.project1.R;
+import com.eumetrica.project1.R.layout;
+import com.eumetrica.project1.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;

@@ -1,4 +1,4 @@
-package com.example.project1.patient;
+package com.eumetrica.project1.patient;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.project1.R;
+import com.eumetrica.project1.R;
 
 public class SettingsActivity extends Activity {
 	private final String[] items = new String[] { "Camera",

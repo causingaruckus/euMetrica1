@@ -1,4 +1,4 @@
-package com.example.project1.doctor;
+package com.eumetrica.project1.doctor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.project1.R;
+import com.eumetrica.project1.R;
 
 public class MessagesActivity extends Activity {
 	private final String[] items = new String[] { "Re: Tim's measures", "Re: Re: way to go!",

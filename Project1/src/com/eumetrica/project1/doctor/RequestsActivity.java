@@ -1,4 +1,4 @@
-package com.example.project1.doctor;
+package com.eumetrica.project1.doctor;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.project1.R;
+import com.eumetrica.project1.R;
 
 public class RequestsActivity extends FragmentActivity implements ActionBar.TabListener {
 

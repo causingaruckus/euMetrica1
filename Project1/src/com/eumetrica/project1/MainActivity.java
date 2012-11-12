@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.eumetrica.project1;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.project1.doctor.DoctorActivity;
-import com.example.project1.patient.PatientActivity;
+import com.eumetrica.project1.doctor.DoctorActivity;
+import com.eumetrica.project1.patient.PatientActivity;
 
 public class MainActivity extends Activity {
 	private Button loginButton;
