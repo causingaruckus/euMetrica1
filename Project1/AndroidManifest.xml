@@ -131,8 +131,8 @@
         <activity
             android:name=".patient.MeasuresActivity"
             android:exported="false"
-            android:label="@string/title_activity_measures" 
-            android:theme="@android:style/Theme.Holo.Light">
+            android:label="@string/title_activity_measures"
+            android:theme="@android:style/Theme.Holo.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -158,6 +158,16 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.PATIENT_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_register"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.REGISTER_CODE" />
             </intent-filter>
         </activity>
     </application>

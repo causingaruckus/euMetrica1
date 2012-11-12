@@ -10,7 +10,6 @@
     <string name="contact_section">Contact</string>
     <string name="title_activity_patient_details">PatientDetailsActivity</string>
     <string name="title_activity_doctor">DoctorActivity</string>
-    
     <string name="title_section2">Fulfilled</string>
     <string name="title_section1">Pending</string>
     <string name="title_activity_alerts">Alerts</string>
@@ -22,5 +21,6 @@
     <string name="title_activity_measures">Measures</string>
     <string name="title_activity_patient_messages">Messages</string>
     <string name="title_activity_patient_chart">PatientChartActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
 
 </resources>
