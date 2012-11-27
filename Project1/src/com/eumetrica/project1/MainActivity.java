@@ -11,14 +11,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.eumetrica.project1.RegisterActivity.UserRoles;
 import com.eumetrica.project1.doctor.DoctorActivity;
 import com.eumetrica.project1.patient.PatientActivity;
+import com.kinvey.KCSClient;
+import com.kinvey.KinveyUser;
+import com.kinvey.util.KinveyCallback;
 
 public class MainActivity extends Activity {
 	private Button loginButton;
 	private TextView registerScreen;
-	private EditText passwordTextEdit;
-	private EditText emailTextEdit;
+	private EditText passwordEditText;
+	private EditText emailEditText;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -28,8 +32,8 @@ public class MainActivity extends Activity {
 		loginButton.setOnClickListener(new LoginButtonListener());
 		registerScreen = (TextView) findViewById(R.id.linkToRegister);
 		registerScreen.setOnClickListener(new LinkToRegisterListener());
-		passwordTextEdit = (EditText) findViewById(R.id.passwordTextEdit);
-		emailTextEdit = (EditText) findViewById(R.id.emailTextEdit);
+		passwordEditText = (EditText) findViewById(R.id.loginPasswordEditText);
+		emailEditText = (EditText) findViewById(R.id.loginEmailEditText);
 
 	}
 
@@ -43,46 +47,59 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 
-			if (passwordTextEdit == null || emailTextEdit == null) {
-
+			if (passwordEditText == null || emailEditText == null) {
+				Toast.makeText(MainActivity.this, "Application Error", Toast.LENGTH_SHORT).show();
+				return;
 			}
-			String email = emailTextEdit.getText().toString();
+			final String email = emailEditText.getText().toString();
+			String password = passwordEditText.getText().toString();
 
 			if (email == null || email.trim().isEmpty()) {
 				showWrongCredentials();
 				return;
 			}
-
-			if (email.equalsIgnoreCase("doctor")) {
-				Intent myIntent = new Intent(MainActivity.this,
-						DoctorActivity.class);
-				startActivity(myIntent);
+			if (password == null || password.trim().isEmpty()) {
+				showWrongCredentials();
 				return;
 			}
-			if (email.equalsIgnoreCase("patient")) {
-				Intent myIntent = new Intent(MainActivity.this,
-						PatientActivity.class);
-				startActivity(myIntent);
-				return;
-			}
-			showWrongCredentials();
 
+			final KCSClient kinveyClient = ((ApplicationMetrica) getApplication()).getKinveyService();
+			kinveyClient.loginWithUsername(email, password, new KinveyCallback<KinveyUser>() {
+				public void onSuccess(KinveyUser kinveyUser) {
+					String fullName = (String) kinveyUser.getAttribute(RegisterActivity.FULL_NAME_ATTRIBUTE);
+					CharSequence text = "Welcome back, " + fullName + ".";
+					Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+					if (UserRoles.isDoctor(kinveyUser)) {
+						Intent myIntent = new Intent(MainActivity.this, DoctorActivity.class);
+						startActivity(myIntent);
+						return;
+					} else {
+						Intent myIntent = new Intent(MainActivity.this, PatientActivity.class);
+						startActivity(myIntent);
+						return;
+					}
+				}
+
+				@Override
+				public void onFailure(Throwable t) {
+					CharSequence text = "Failed to login as, " + email + ".";
+					Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+				}
+
+			});
 		}
 
 	}
 
 	private void showWrongCredentials() {
-		Toast.makeText(MainActivity.this,
-				"Wrong credentials, enter: doctor or patient",
-				Toast.LENGTH_SHORT).show();
+		Toast.makeText(MainActivity.this, "Wrong credentials, enter: doctor or patient", Toast.LENGTH_SHORT).show();
 	}
 
 	private class LinkToRegisterListener implements OnClickListener {
 		@Override
 		public void onClick(View v) {
 
-			Intent myIntent = new Intent(MainActivity.this,
-					RegisterActivity.class);
+			Intent myIntent = new Intent(MainActivity.this, RegisterActivity.class);
 			startActivity(myIntent);
 		}
 	}
@@ -90,8 +107,7 @@ public class MainActivity extends Activity {
 	private class PatientButtonListener implements OnClickListener {
 		@Override
 		public void onClick(View v) {
-			Intent myIntent = new Intent(MainActivity.this,
-					PatientActivity.class);
+			Intent myIntent = new Intent(MainActivity.this, PatientActivity.class);
 			startActivity(myIntent);
 		}
 	}
@@ -115,8 +131,7 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 
-			Intent myIntent = new Intent(MainActivity.this,
-					DoctorActivity.class);
+			Intent myIntent = new Intent(MainActivity.this, DoctorActivity.class);
 			MainActivity.this.startActivity(myIntent);
 
 		}

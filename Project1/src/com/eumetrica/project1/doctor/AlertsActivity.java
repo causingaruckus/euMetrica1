@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eumetrica.project1.R;
@@ -156,7 +157,9 @@ public class AlertsActivity extends FragmentActivity implements
 			textView.setGravity(Gravity.TOP);
 			Bundle args = getArguments();
 			if (args.getInt(ARG_SECTION_NUMBER) == 1) {
-				textView.setText("-No Alerts at this time");
+				ListView listView = new ListView(getActivity());
+				
+				return listView;
 			}
 			else {
 				textView.setText("-Sara took her prescribed spirometer reading");

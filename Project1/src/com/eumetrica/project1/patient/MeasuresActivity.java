@@ -1,12 +1,10 @@
 package com.eumetrica.project1.patient;
 
-import com.eumetrica.project1.R;
-import com.eumetrica.project1.R.layout;
-import com.eumetrica.project1.R.menu;
-
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+
+import com.eumetrica.project1.R;
 
 public class MeasuresActivity extends Activity {
 
